@@ -62,7 +62,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Save the playlist
-        uses: library-pals/apple-music-to-yaml-action@v0.1.0
+        uses: library-pals/apple-music-to-yaml-action@v0.0.0
         with:
           playlist-json: ${{ inputs.playlist-json }}
           filename: _data/playlists.yml
