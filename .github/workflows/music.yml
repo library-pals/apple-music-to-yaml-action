@@ -1,0 +1,31 @@
+name: Save Apple Music playlist
+
+on:
+  workflow_dispatch:
+    inputs:
+      playlist-json:
+        description: JSON string containing playlist data from Apple Shortcut
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  apple-music-to-yaml:
+    runs-on: ubuntu-latest
+    name: Save Apple Music playlist
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Save the playlist
+        uses: ./
+        with:
+          playlist-json: ${{ inputs.playlist-json }}
+          filename: _data/playlists.yml
+      - name: Commit files
+        run: |
+          git pull
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A && git commit -m "🎵 ${{ env.playlist }}"
+          git push

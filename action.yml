@@ -1,0 +1,13 @@
+name: "Apple Music to Yaml"
+description: "Add an Apple Music playlist to YAML."
+runs:
+  using: node20
+  main: "dist/index.js"
+
+inputs:
+  playlist-json:
+    description: JSON string containing playlist data from Apple Shortcut
+    required: true
+  filename:
+    description: The YAML file to write your playlists.
+    default: _data/playlists.yml

@@ -1,0 +1,46 @@
+{
+  "name": "apple-music-to-yaml-action",
+  "version": "0.0.0",
+  "description": "Export an Apple Music playlist to YAML.",
+  "exports": "./dist/index.js",
+  "type": "module",
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "jest --coverage",
+    "lint": "eslint .",
+    "build": "ncc build src/index.ts"
+  },
+  "author": "Katy DeCorah",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
+    "@eslint/js": "^9.39.2",
+    "@types/jest": "^30.0.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^25.0.1",
+    "@vercel/ncc": "^0.38.4",
+    "eslint": "^9.39.2",
+    "eslint-plugin-jest": "^29.2.2",
+    "jest": "^30.2.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.49.0"
+  },
+  "dependencies": {
+    "@actions/core": "^2.0.1",
+    "@actions/github": "^6.0.1",
+    "js-yaml": "^4.1.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/library-pals/apple-music-to-yaml-action.git"
+  },
+  "bugs": {
+    "url": "https://github.com/library-pals/apple-music-to-yaml-action/issues"
+  },
+  "homepage": "https://github.com/library-pals/apple-music-to-yaml-action#readme"
+}
