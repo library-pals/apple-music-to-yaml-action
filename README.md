@@ -60,7 +60,7 @@ jobs:
     name: Save Apple Music playlist
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Save the playlist
         uses: library-pals/apple-music-to-yaml-action@v0.2.0
         with:
